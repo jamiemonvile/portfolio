@@ -1,0 +1,89 @@
+body {
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	font-size: 14pt;
+}
+
+.jamie {
+	text-align: center;
+	font-size: 3em;
+	padding: 20px;
+	color: #600d19;
+}
+
+.nav_item{
+	color: #000;
+	font-size: 1em;
+	padding: 5px 0px;
+	text-align: center;
+}
+
+.nav_item a {
+	color: #000;
+	text-decoration: none;
+}
+
+.nav_item a:hover{
+	text-decoration: underline;
+}
+
+.topnav .current{
+	color: #FFF;
+	background-color: #600d19;
+}
+
+.about_pic, .dw, .ii, .atomic, .propub, .priorityorg, .gallery{
+	display: block;
+	margin-left: auto;   /* adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
+	margin-right: auto;
+	width: 500px;
+	padding: 20px 20px;
+}
+
+h2{
+	font-size: 2em;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+h3{
+	font-style: italic;
+	text-align: center;
+}
+
+h4{
+	font-size: 1.5em;
+	font-weight: bold;
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom: 5px;
+}
+
+p{
+	padding: 10px 20px;
+	line-height: 1.25em;
+}
+
+ul.copy{
+	list-style-type: disc;
+	padding: 10px 60px;
+	line-height: 1.25em;
+}
+
+.indent{
+	padding-left: 40px;
+}
+
+.gallery img{
+	border: 1px solid black;
+	margin: 10px 0px;
+	box-shadow: 10px 10px;
+}
+
+footer{
+	background: #600d19;
+	color: #FFF;
+	padding: 20px;
+	text-align: center;
+	font-size: .5em;
+}
