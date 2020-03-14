@@ -3,14 +3,13 @@ body {
 	font-size: 12pt;
 }
 
+/*navigation*/
+
 header{
   display: flex;
-/*  background: #fff;
-  border-bottom: 3px solid #50C7C7;*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
-/*  justify-content: space-between;*/
 }
 
 .jamie {
@@ -24,7 +23,7 @@ header{
 .topnav{
   display: flex;
   list-style: none;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 20px;
@@ -46,14 +45,12 @@ header{
 	text-decoration: underline;
 }
 
-/*.nav_item a:focus{
-	text-decoration: underline;
-}*/
-
-.topnav .current{
+.topnav .current a{
 	color: #FFF;
 	background-color: #600d19;
 }
+
+/*skip to content*/
 
 a.skip{
   background: white;
@@ -71,14 +68,16 @@ a.skip:focus{
   color: #000;	
 }
 
-.dw, .ii, .atomic, .propub, .priorityorg, .gallery{
-	display: block;
-	margin-left: auto;    adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp
+/*images - likely will change*/
+.dw, .ii, .atomic, .propub, .priorityorg{
+	display: grid;
+	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
 	margin-right: auto;
 	width: 500px;
-	padding: 20px 20px;
+	padding: 20px;
 }
 
+/*grid about page*/
 .container{
 	display: grid;
 	grid-template-columns: auto;
@@ -95,6 +94,8 @@ a.skip:focus{
 	display: none;
 }
 
+/*header & copy styling*/
+
 h2{
 	font-size: 2em;
 	padding: 10px 20px;
@@ -102,9 +103,10 @@ h2{
 }
 
 h3{
+	font-size: .80em;
 	font-style: italic;
 	text-align: center;
-	padding: 10px 20px;
+	padding: 20px 10px 30px 10px;
 }
 
 h4{
@@ -133,15 +135,53 @@ ul.copy{
 	padding-left: 40px;
 }
 
+/*gallery*/
+
 .gallery{
-	display: flex;
+  	display: flex;
   	flex-direction: column;
   	justify-content: center;
+  	align-items: center;
 }
 
 .gallery img{
-  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  /* adapted from: https://www.w3schools.com/css/css3_shadows.asp;*/
+	width: 400px;
+	padding: 20px 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  /* adapted from: https://www.w3schools.com/css/css3_shadows.asp;*/
 }
+
+.image {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.caption {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery:hover .image {
+  opacity: 0.3;
+}
+
+.gallery:hover .caption {
+  opacity: 1;
+}
+
+.text {
+  background-color: #600d19;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
 
 div.caption{
 	display: flex;
@@ -152,14 +192,28 @@ div.caption{
 }
 
 footer{
+	position: fixed;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
 	background: #600d19;
 	color: #FFF;
-	padding: 20px;
+	padding: 10px;
+	margin-top: 20px;
 	text-align: center;
 	font-size: .75em;
 }
 
 @media all and (min-width: 600px){
+.topnav{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
 .container{
 	display: grid;
 	grid-template-columns: 240px auto;
@@ -170,11 +224,8 @@ footer{
 	display: grid;
 	margin-left: 10px;
 	margin-bottom: 20px;
-/*	margin-left: auto;    adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp
-	margin-right: auto;*/
 	width: 230px;
 	grid-column: 1 / span 1;
-/*	overflow: hidden;*/
 }
 
 .about_mobile{
@@ -183,15 +234,22 @@ footer{
 
 .bio {
 	grid-column: 2 / span 1;
-	font-size: 1em;
+	font-size: 1.2em;
+}
+
+.gallery .caption{
+	display: none;
 }
 
 .gallery img{
-	display: flex;
-  	flex-direction: row;
-  	justify-content: center;
-  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  /* adapted from: https://www.w3schools.com/css/css3_shadows.asp;*/
+	width: 250px;
+	padding: 20px;
+	margin: 5px;
 }
+.gallery {
+  	display: flex;
+  	flex-flow: row wrap;
+  	justify-content: center;
 }
 
 @media all and (min-width: 900px){
@@ -202,19 +260,13 @@ header{
 
 .topnav{
     flex-direction: row;
-    align-content: flex-end;
-/*    justify-content: flex-end;*/
-
+    margin-bottom: 0px;
   }
 
-/* .jamie{
+h1 .jamie{
  	flex-direction: row;
  } 
-*/
-/* .nav_item a{
-    padding: 10px;
-  }
-*/
+
 .container{
 	display: grid;
 	grid-template-columns: 420px auto;
@@ -225,11 +277,8 @@ header{
 	display: grid;
 	margin-left: 10px;
 	margin-bottom: 20px;
-/*	margin-left: auto;    adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp
-	margin-right: auto;*/
 	width: 400px;
 	grid-column: 1 / span 1;
-/*	overflow: hidden;*/
 }
 
 .about_mobile{
@@ -238,5 +287,11 @@ header{
 
 .bio {
 	grid-column: 2 / span 1;
-	font-size: 1.25em;
+	font-size: 1.5em;
+}
+
+.gallery img{
+	width: 350px;
+	padding: 20px;
+	margin: 5px;
 }
