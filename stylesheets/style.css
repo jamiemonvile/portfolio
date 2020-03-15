@@ -20,6 +20,10 @@ header{
 	color: #600d19;
 }
 
+nav{
+    flex: 1;
+}
+
 .topnav{
   display: flex;
   list-style: none;
@@ -68,17 +72,17 @@ a.skip:focus{
   color: #000;	
 }
 
-/*images - likely will change*/
+/* project images*/
 .dw, .ii, .atomic, .propub, .priorityorg{
 	display: grid;
 	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
 	margin-right: auto;
 	width: 500px;
-	padding: 20px;
+	padding-top: 10px;
 }
 
 /*grid about page*/
-.container{
+.container_about{
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto auto;
@@ -94,12 +98,22 @@ a.skip:focus{
 	display: none;
 }
 
+/*grid ux & service design pages*/
+.container_projects{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
 /*header & copy styling*/
 
 h2{
+	color: #FFF;
+	background-color: #600d19;;
 	font-size: 2em;
-	padding: 10px 20px;
+	padding: 5px 10px;
 	text-align: center;
+	width: 
 }
 
 h3{
@@ -147,10 +161,20 @@ ul.copy{
 .gallery img{
 	width: 400px;
 	padding: 20px 20px;
+	margin-bottom: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  /* adapted from: https://www.w3schools.com/css/css3_shadows.asp;*/
 }
 
-.image {
+.gallery:last-child{
+	margin-bottom: 30px;
+}
+
+/*gallery animation*/    /* adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity*/
+.box{
+	position: relative;
+}
+
+.image {               
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;
@@ -167,11 +191,19 @@ ul.copy{
   text-align: center;
 }
 
-.container:hover .image .caption{
+.box:hover .image{
   opacity: 0.3;
 }
 
-.container:hover .caption {
+.box:hover .caption {
+  opacity: 1;
+}
+
+.box:focus .image{
+  opacity: 0.3;
+}
+
+.box:focus .caption {
   opacity: 1;
 }
 
@@ -179,18 +211,10 @@ ul.copy{
   background-color: #600d19;
   color: white;
   font-size: .75em;
-  padding: 16px 32px;
+  padding: 10px 20px;
 }
 
-
-/*div.caption{
-	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	font-size: .75em;
-  	margin-bottom: 20px;
-}*/
-
+/*footer */
 footer{
 	position: fixed;
 	width: 100%;
@@ -205,95 +229,121 @@ footer{
 }
 
 @media all and (min-width: 600px){
-.topnav{
-  display: flex;
-  list-style: none;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
 
-.container{
-	display: grid;
-	grid-template-columns: 240px auto;
-	grid-template-rows: auto;
-}
+	.topnav{
+	  display: flex;
+	  list-style: none;
+	  flex-direction: row;
+	  align-items: center;
+	  justify-content: space-around;
+	  margin-bottom: 20px;
+	}
 
-.about_full {
-	display: grid;
-	margin-left: 10px;
-	margin-bottom: 20px;
-	width: 230px;
-	grid-column: 1 / span 1;
-}
+	.container_about{
+		display: grid;
+		grid-template-columns: 240px auto;
+		grid-template-rows: auto;
+	}
 
-.about_mobile{
-	display: none;
-}
+	.about_full {
+		display: grid;
+		margin-left: 10px;
+		margin-bottom: 20px;
+		width: 230px;
+		grid-column: 1 / span 1;
+	}
 
-.bio {
-	grid-column: 2 / span 1;
-	font-size: 1.2em;
-}
+	.about_mobile{
+		display: none;
+	}
 
-.gallery .caption{
-	display: none;
-}
+	.bio {
+		grid-column: 2 / span 1;
+		font-size: 1.2em;
+	}
 
-.gallery img{
-	width: 250px;
-	padding: 20px;
-	margin: 5px;
-}
-.gallery {
-  	display: flex;
-  	flex-flow: row wrap;
-  	justify-content: center;
-}
+	/*grid ux & service design pages*/
+	.container_projects{
+		display: grid;
+		grid-template-columns: 520px auto;
+		grid-template-rows: auto auto auto auto auto auto;
+	}
+
+	.atomic_head{
+		display: grid;
+		grid-row: 1 / -1;
+		grid-column: 1 / span 2;
+	}
+
+	.atomic{
+		display: grid;
+		grid-row: 2 / span 1;
+		grid-column: 1 / span 1;
+	} 
+
+	.atomic_content{
+		display: grid;
+		grid-row: 2 / span 1;
+		grid-column: 2 / span 1;
+	}
+
+
+	.gallery img{
+		width: 250px;
+		padding: 20px;
+		margin: 5px;
+	}
+
+	.gallery {
+	  	display: flex;
+	  	flex-flow: row wrap;
+	  	justify-content: center;
+	}
 }
 
 @media all and (min-width: 900px){
-header{
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
-.topnav{
-    flex-direction: row;
-    margin-bottom: 0px;
-  }
+	header{
+	    flex-direction: row;
+	    justify-content: space-between;
+	  }
 
-h1 .jamie{
- 	flex-direction: row;
- } 
+	.topnav{
+	    flex-direction: row;
+	    margin-bottom: 0px;
+	    justify-content: flex-end;
+	  }
 
-.container{
-	display: grid;
-	grid-template-columns: 420px auto;
-	grid-template-rows: auto;
-}
+	h1 .jamie{
+	 	flex-direction: row;
+	 } 
 
-.about_full {
-	display: grid;
-	margin-left: 10px;
-	margin-bottom: 20px;
-	width: 400px;
-	grid-column: 1 / span 1;
-}
+	.container_about{
+		display: grid;
+		grid-template-columns: 420px auto;
+		grid-template-rows: auto;
+	}
 
-.about_mobile{
-	display: none;
-}
+	.about_full {
+		display: grid;
+		margin-left: 10px;
+		margin-bottom: 20px;
+		width: 400px;
+		grid-column: 1 / span 1;
+	}
 
-.bio {
-	grid-column: 2 / span 1;
-	font-size: 1.5em;
-}
+	.about_mobile{
+		display: none;
+	}
 
-.gallery img{
-	width: 350px;
-	padding: 20px;
-	margin: 5px;
-}
+	.bio {
+		grid-column: 2 / span 1;
+		font-size: 1.5em;
+	}
+
+	.gallery img{
+		width: 350px;
+		padding: 20px;
+		margin: 5px;
+	}
 }
