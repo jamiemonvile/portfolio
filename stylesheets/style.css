@@ -12,13 +12,21 @@ header{
   align-items: center;
 }
 
-.jamie {
+h1 {
 	display: flex;
 	justify-content: center;
 	font-size: 3em;
 	padding: 20px;
 	color: #600d19;
 }
+
+.retroshadow {    /*adapted from: https://codepen.io/juanbrujo/pen/yGpAK (https://cssnewbie.com/10-beautiful-css-text-effects/#.Xm6DkpNKii7)*/
+    letter-spacing: .05em;
+    text-shadow: 
+      3px 3px 0px #FFF, 
+      6px 6px 0px rgba(0, 0, 0, 0.2);
+ }
+
 
 nav{
     flex: 1;
@@ -72,14 +80,7 @@ a.skip:focus{
   color: #000;	
 }
 
-/* project images*/
-.dw, .ii, .atomic, .propub, .priorityorg{
-	display: grid;
-	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
-	margin-right: auto;
-	width: 500px;
-	padding-top: 10px;
-}
+
 
 /*grid about page*/
 .container_about{
@@ -98,8 +99,17 @@ a.skip:focus{
 	display: none;
 }
 
+/* project images*/
+.dw, .ii, .atomic, .propub, .priorityorg{
+	display: grid;
+	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
+	margin-right: auto;
+	width: 500px;
+	padding-top: 10px;
+}
+
 /*grid ux page*/
-.container_projects{
+.container_ux{
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto auto auto auto auto auto auto;
@@ -137,18 +147,56 @@ a.skip:focus{
 
 .priorityorg_head {
 	display: grid;
-	grid-row: 4;
+	grid-row: 7;
 }
 
 .priorityorg_img {
 	display: grid;
-	grid-row: 5;
+	grid-row: 8;
 }
 
 .priorityorg_content {
 	display: grid;
+	grid-row: 9;
+}
+
+/*grid service design page*/
+.container_servicedesign{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto auto auto;
+}
+
+.dw_head {
+	display: grid;
+	grid-row: 1;
+}
+
+.dw_img {
+	display: grid;
+	grid-row: 2;
+}
+
+.dw_content {
+	display: grid;
+	grid-row: 3;
+}
+
+.biztech_head {
+	display: grid;
+	grid-row: 4;
+}
+
+.biztech_img {
+	display: grid;
+	grid-row: 5;
+}
+
+.biztech_content {
+	display: grid;
 	grid-row: 6;
 }
+
 
 /*header & copy styling*/
 
@@ -309,11 +357,19 @@ footer{
 	}
 
 /*grid ux page*/
-	.container_projects{
+	.container_ux{
 		display: grid;
-		grid-template-columns: 520px auto;
+		grid-template-columns: 420px auto;
 		grid-template-rows: auto auto auto auto auto auto;
 	}
+
+	.dw, .ii, .atomic, .propub, .priorityorg{
+		display: grid;
+		margin-left: 10px;    
+		width: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px
+}
 
 	.atomic_head {
 		display: grid;
@@ -369,7 +425,58 @@ footer{
 		grid-column: 2 / span 1;
 	}
 
+/*grid ux page*/
+	.container_servicedesign{
+		display: grid;
+		grid-template-columns: 420px auto;
+		grid-template-rows: auto auto auto auto;
+	}
 
+	.dw, .ii, .atomic, .propub, .priorityorg{
+		display: grid;
+		margin-left: 10px;    
+		width: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px
+}
+
+	.dw_head {
+		display: grid;
+		grid-column: 1 / -1;
+		grid-row: 1;
+	}
+
+	.dw_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 1 / span 1;
+	}
+
+	.dw_content {
+		display: grid;
+		grid-row: 2;
+		grid-column: 2 / span 1;
+	}
+
+	.biztech_head {
+		display: grid;
+		grid-row: 3;
+		grid-column: 1 / -1;
+	}
+
+	.biztech_img {
+		display: grid;
+		grid-row: 4;
+		grid-column: 1 / span 1; 
+	}
+
+	.biztech_content {
+		display: grid;
+		grid-row: 4;
+		grid-column: 2 / span 1;
+	}
+
+/*flex gallery*/
 	.gallery img{
 		width: 250px;
 		padding: 20px;
@@ -385,6 +492,7 @@ footer{
 
 @media all and (min-width: 900px){
 
+/*navigation*/
 	header{
 	    flex-direction: row;
 	    justify-content: space-between;
@@ -396,10 +504,11 @@ footer{
 	    justify-content: flex-end;
 	  }
 
-	h1 .jamie{
+	h1{
 	 	flex-direction: row;
 	 } 
 
+/*grid about page*/
 	.container_about{
 		display: grid;
 		grid-template-columns: 420px auto;
@@ -423,9 +532,152 @@ footer{
 		font-size: 1.5em;
 	}
 
+/*grid ux page*/
+	.container_ux{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+		grid-column-gap: 2px;
+	}
+
+	.dw, .ii, .atomic, .propub, .priorityorg{
+		display: grid;
+		margin-left: auto;
+		margin-right: auto;    
+		width: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px
+}
+
+	.atomic_head {
+		display: grid;
+		grid-column: 1 / span 1;
+		grid-row: 1;
+	}
+
+	.atomic_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 1 / span 1;
+	}
+
+	.atomic_content {
+		display: grid;
+		grid-row: 3;
+		grid-column: 1 / span 1;
+	}
+
+	.propub_head {
+		display: grid;
+		grid-row: 1;
+		grid-column: 2 / span 1;
+	}
+
+	.propub_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 2 / span 1; 
+	}
+
+	.propub_content {
+		display: grid;
+		grid-row: 3;
+		grid-column: 2 / span 1;
+	}
+
+	.priorityorg_head {
+		display: grid;
+		grid-row: 1;
+		grid-column: 3 / span 1;
+	}
+
+	.priorityorg_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 3 / span 1; 
+	}
+
+	.priorityorg_content {
+		display: grid;
+		grid-row: 3;
+		grid-column: 3 / span 1;
+	}
+
+/*grid service design page*/
+	.container_servicedesign{
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto auto;
+		grid-column-gap: 2px;
+	}
+
+	.dw, .ii, .atomic, .propub, .priorityorg{
+		display: grid;
+		margin-left: auto;
+		margin-right: auto;    
+		width: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px
+}
+
+	.dw_head {
+		display: grid;
+		grid-column: 1 / span 1;
+		grid-row: 1;
+	}
+
+	.dw_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 1 / span 1;
+	}
+
+	.dw_content {
+		display: grid;
+		grid-row: 3;
+		grid-column: 1 / span 1;
+	}
+
+	.biztech_head {
+		display: grid;
+		grid-row: 1;
+		grid-column: 2 / span 1;
+	}
+
+	.biztech_img {
+		display: grid;
+		grid-row: 2;
+		grid-column: 2 / span 1; 
+	}
+
+	.biztech_content {
+		display: grid;
+		grid-row: 3;
+		grid-column: 2 / span 1;
+	}
+
+/*flex gallery*/
+	.gallery img{
+		width: 250px;
+		padding: 20px;
+		margin: 5px;
+	}
+
+	.gallery {
+	  	display: flex;
+	  	flex-flow: row wrap;
+	  	justify-content: center;
+	}
+
 	.gallery img{
 		width: 350px;
 		padding: 20px;
 		margin: 5px;
 	}
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+/*  #logo{
+      animation: none;*/
+  }
 }
