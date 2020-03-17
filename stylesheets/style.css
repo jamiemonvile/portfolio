@@ -676,8 +676,10 @@ footer{
 	}
 }
 
-@media screen and (prefers-reduced-motion: reduce){
-/*  #logo{
-      animation: none;*/
-  }
+@media (prefers-reduced-motion: reduce) {
+* {
+    animation-duration: 0s;
+    transition: none;
+    scroll-behavior: auto;
+}
 }
