@@ -63,6 +63,7 @@ nav{
 	background-color: #600d19;
 }
 
+/*Name heading animation*/
 @-webkit-keyframes name_grow{
   from{
     font-size: .5em;
@@ -70,7 +71,6 @@ nav{
   to{
     font-size: 3em;
   }
-
 }
 
 @keyframes name_grow{
@@ -80,7 +80,6 @@ nav{
   to{
     font-size: 3em;
   }
-
 } 
 
 #name{
@@ -94,7 +93,6 @@ nav{
 }
 
 /*skip to content*/
-
 a.skip{
   background: white;
   left: 0;
@@ -110,7 +108,6 @@ a.skip:focus{
   top: 5px;
   color: #000;	
 }
-
 
 
 /*grid about page*/
@@ -130,13 +127,30 @@ a.skip:focus{
 	display: none;
 }
 
+.about_pic{
+  background-attachment: fixed; /* Parallax effect */     
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 300px;                /* Parallax effect */
+
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  background-image: url("../images/jamie.jpg");
+  background-color: black;
+}
+
+
 /* project images*/
 .dw, .ii, .atomic, .propub, .priorityorg{
 	display: grid;
 	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
 	margin-right: auto;
-	width: 500px;
+	width: 400px;
 	padding-top: 10px;
+/*	padding-bottom: 20px;*/
 }
 
 /*grid ux page*/
@@ -226,6 +240,50 @@ a.skip:focus{
 .biztech_content {
 	display: grid;
 	grid-row: 6;
+}
+
+/*flip card service design*/ /*Adapted from: https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 250px;
+  margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
+  margin-right: auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #600d19;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 
@@ -711,11 +769,33 @@ footer{
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
-* {
-    animation: none;
-/*    animation-duration: 0s;*/
-    transition: none;
-    scroll-behavior: auto;
+@media all and (prefers-reduced-motion: reduce) {
+a.skip{
+	-webkit-transition: none;
+  	transition: none;
 }
+
+.image{
+	-webkit-transition: none;
+  	transition: none;	
+}
+
+.caption{
+	-webkit-transition: none;
+  	transition: none;
+}
+
+.flip-card-inner{
+	-webkit-transition: none;
+  	transition: none;
+}
+
+#name{
+	-webkit-animation: none;
+  	animation: none;
+}
+
+/*    animation-duration: 0s;*/
+/*    transition: none;
+    scroll-behavior: auto;*/
 }
