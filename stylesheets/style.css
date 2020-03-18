@@ -63,6 +63,36 @@ nav{
 	background-color: #600d19;
 }
 
+@-webkit-keyframes name_grow{
+  from{
+    font-size: .5em;
+  }
+  to{
+    font-size: 3em;
+  }
+
+}
+
+@keyframes name_grow{
+  from{
+    font-size: .5em;
+  }
+  to{
+    font-size: 3em;
+  }
+
+} 
+
+#name{
+  -webkit-animation-name: name_grow;
+  animation-name: name_grow;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  
+}
+
 /*skip to content*/
 
 a.skip{
@@ -683,7 +713,8 @@ footer{
 
 @media (prefers-reduced-motion: reduce) {
 * {
-    animation-duration: 0s;
+    animation: none;
+/*    animation-duration: 0s;*/
     transition: none;
     scroll-behavior: auto;
 }
