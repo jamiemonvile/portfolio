@@ -230,6 +230,10 @@ p{
 	line-height: 1.25em;
 }
 
+p:last-child{
+	margin-bottom: 40px;
+}
+
 ul.copy{
 	font-size: .85em;
 	list-style-type: disc;
@@ -258,7 +262,7 @@ ul.copy{
 }
 
 .gallery:last-child{
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 /*gallery animation*/    /* adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity*/
