@@ -128,17 +128,17 @@ a.skip:focus{
 }
 
 .about_pic{
-  background-attachment: fixed; /* Parallax effect */     
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
+  background-attachment: fixed;     
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-size: cover;       
   color: white;
-  height: 300px;                /* Parallax effect */
+  height: 300px;               
 
   display: grid;
   grid-column: 1 / -1;
   grid-row: 1 / span 1;
-  background-image: url("../images/jamie_parallax.jpg");
+  background-image: url("../images/jamie_parallax_tall.jpg");
   background-color: black;
 }
 
