@@ -114,14 +114,9 @@ a.skip:focus{
 .container_about{
 	display: grid;
 	grid-template-columns: auto;
-	grid-template-rows: auto auto;
+	grid-template-rows: auto auto auto;
 }
 
-.about_mobile {
-	display: grid;
-	margin-left: auto;    /*adapted from: https://www.w3schools.com/howto/howto_css_image_center.asp*/
-	margin-right: auto;
-}
 
 .about_full{
 	display: none;
@@ -142,6 +137,25 @@ a.skip:focus{
   background-color: black;
 }
 
+/* form*/
+.container_form{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-row-gap: 5px;
+	grid-column-gap: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+.form_title{
+	text-align: center;
+	padding-bottom: 10px
+}
+
+input[type=submit]{
+	margin-bottom: 40px;
+}
 
 /* project images*/
 .dw, .ii, .atomic, .propub, .priorityorg{
@@ -150,7 +164,6 @@ a.skip:focus{
 	margin-right: auto;
 	width: 400px;
 	padding-top: 10px;
-/*	padding-bottom: 20px;*/
 }
 
 /*grid ux page*/
@@ -158,6 +171,7 @@ a.skip:focus{
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto auto auto auto auto auto auto;
+
 }
 
 .atomic_head {
@@ -429,7 +443,7 @@ footer{
 	.container_about{
 		display: grid;
 		grid-template-columns: 240px auto;
-		grid-template-rows: auto;
+		grid-template-rows: auto auto;
 	}
 
 	.about_full {
@@ -442,6 +456,11 @@ footer{
 
 	.about_pic{
 	  height: 0px;
+	}
+
+	.container_form{
+		display: grid;
+		grid-row: 2 / span 2;
 	}
 
 	.bio {
@@ -605,7 +624,7 @@ footer{
 	.container_about{
 		display: grid;
 		grid-template-columns: 420px auto;
-		grid-template-rows: auto;
+		grid-template-rows: auto auto;
 	}
 
 	.about_full {
@@ -616,13 +635,16 @@ footer{
 		grid-column: 1 / span 1;
 	}
 
-	.about_mobile{
-		display: none;
-	}
-
 	.bio {
 		grid-column: 2 / span 1;
+		grid-row: 1/ span 1;
 		font-size: 1.5em;
+	}
+
+	.form{
+		display: grid;
+		grid-row: 2 / span 1;
+		grid-column: 2 / span 1;
 	}
 
 /*grid ux page*/
